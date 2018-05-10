@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Kippington",
+  "description": "This extension fetches Kipsu company IDs from Zendesk",
+  "version": "1.0",
+
+  "browser_action" : {
+    "default_icon": "icon.png"
+  },
+  "icons":{
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["tabs", "https://kipsu.zendesk.com/agent/tickets/*"],
+  "content_scripts":[
+    {"matches": ["https://kipsu.zendesk.com/agent/tickets/*"],
+    "js": ["kippington.js"]}
+  ]
+}
